@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Comici私有地丨漫爱次元图床</title>
+	<meta name="keywords" content="这里是关键词"
+	<meta name="desorption" content="这里是描述"
+	<!--插入css文件-->
+		<link rel="stylesheet" href="layui/css/layui.css">
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+<!-- 这里写入html代码 -->
+ <!--html{background:url()center no-repeat;background-size:100% 100%;}-->
+
+<!--header-->
+<div>
+<div class="header-link"<a class="header-link" target="_blank" href="http://www.comici.win" </a>
+<div></div>
+<!--这里写入导航-->
+<ul class="layui-nav" lay-filter="">
+  <li class="layui-nav-item"><a href="http://www.comici.win">首页</a></li>
+  <li class="layui-nav-item layui-this"><a href="http://bbc.comici.win">电台</a></li>
+   <li class="layui-nav-item"><a href="http://bbs.comici.win">社区</a></li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">私有云盘（建设中）</a>
+    <dl class="layui-nav-child"> 
+    <!-- 这里是二级菜单,下拉列表可以添加无数个 -->
+      <dd><a href="">1</a></dd>
+      <dd><a href="">功能2</a></dd>
+      <dd><a href="">功能3</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item"><a href="about.html">关于</a></li>
+</ul>
+
+
+<style type="text/css">
+.demo{width:760px; margin:40px auto 0 auto; min-height:150px;}
+.preview{width:200px;border:solid 1px #dedede; margin:10px;padding:10px;}
+.demo p{line-height:26px}
+.btn{position: relative;overflow: hidden;margin-right: 4px;display:inline-block;*display:inline;padding:4px 10px 4px;font-size:14px;line-height:18px;*line-height:20px;color:#fff;text-align:center;vertical-align:middle;cursor:pointer;background-color:#5bb75b;border:1px solid #cccccc;border-color:#e6e6e6 #e6e6e6 #bfbfbf;border-bottom-color:#b3b3b3;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+.btn input {position: absolute;top: 0; right: 0;margin: 0;border: solid transparent;opacity: 0;filter:alpha(opacity=0); cursor: pointer;}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.wallform.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#photoimg').die('click').live('change', function(){
+		var status = $("#up_status");
+		var btn = $("#up_btn");
+		$("#imageform").ajaxForm({
+			target: '#preview', 
+			beforeSubmit:function(){
+				status.show();
+				btn.hide();
+			}, 
+			success:function(){
+				status.hide();
+				btn.show();
+			}, 
+			error:function(){
+				status.hide();
+				btn.show();
+		} }).submit();
+	});
+});
+</script>
+
+
+
+</head>
+
+<body>
+<div id="header">
+   <div id="logo"><h1><a href="http://www.comici.win" title="返回首页">helloweba</a></h1></div>
+   <div class="demo_topad"><script src="/js/ad_js/demo_topad.js" type="text/javascript"></script></div>
+</div>
+
+<div id="main">
+   <h2 class="top_title"><a href="http://www.comici.win">轻量级私有图床，支持多图片上传，但暂时不支持一次性多张图片上传</a></h2>
+   <p style="text-align: center;"><a href="about.html">第一次使用请点击看一下</a></p>
+   <p style="text-align: center;"><a href="about.html" class="layui-btn">看看？</a></p>
+   <div class="demo">
+   		<div class="ad_demo"><script src="/js/ad_js/ad_demo.js" type="text/javascript"></script></div>
+        
+        <form id="imageform" method="post" enctype="multipart/form-data" action="upload.php">
+			<div id="up_status" style="display:none"><img src="loader.gif" alt="uploading"/></div>
+			<div id="up_btn" class="btn">
+				<span>添加图片</span>
+				<input id="photoimg" type="file" name="photoimg">
+			</div>
+		</form>
+        <p>最大5MB，支持jpg，gif，png格式。☆上传后显示预览图即可右键获得图片地址</p>
+		<div id="preview"></div>
+   </div>
+	
+  
+  <br/>
+</div>
+
+<script src="layui/layui.js"></script>
+<script>
+layui.use(['layer', 'form'], function(){
+  var layer = layui.layer
+  ,form = layui.form();
+  
+  layer.msg('来者是客');
+});
+</script> 
+
+<div id="footer">
+    <p>Powered by comici丨驱动 helloweba &nbsp;&nbsp; 漫爱论坛 <a href="http://bbs.comici.win">bbs</a></p>
+</div>
+<p id="stat"><script type="text/javascript" src="/js/tongji.js"></script></p>
+</body>
+</html>
